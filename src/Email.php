@@ -65,6 +65,12 @@ class Email
         return $this;
     }
 
+    public function setReplyTo(string $address, string $name): Email
+    {
+        $this->builder->setReplyToAddress($address, ['full_name' => $name]);
+        return $this;
+    }
+
     /**
      * Add html/plain text content
      *
